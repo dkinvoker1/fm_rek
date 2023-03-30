@@ -6,7 +6,6 @@ part 'strange_mind.freezed.dart';
 class StrangeMindEntity with _$StrangeMindEntity {
   factory StrangeMindEntity({
     required int orderId,
-    required int id,
     required String title,
     required String description,
     required String detailsUrl,

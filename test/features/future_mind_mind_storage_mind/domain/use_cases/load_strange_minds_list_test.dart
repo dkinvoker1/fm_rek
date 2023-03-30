@@ -22,7 +22,6 @@ void main() {
   final tStrangeMindsList = [
     StrangeMindEntity(
         orderId: 1,
-        id: 1,
         title: 'title',
         description: 'description',
         detailsUrl: 'detailsUrl',
@@ -39,7 +38,7 @@ void main() {
       //act
       final result = await useCase(NoParams());
       //assert
-      expect(result, equals(Right(tStrangeMindsList)));
+      expect(result, Right(tStrangeMindsList));
       verify(mockStrangeMindRepository.getStrangeMindsList());
       verifyNoMoreInteractions(mockStrangeMindRepository);
     },
