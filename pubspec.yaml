@@ -20,6 +20,7 @@ dependencies:
 
 dev_dependencies:
   auto_route_generator: ^6.0.2
+  bloc_test: ^9.1.1
   build_runner: ^2.3.3
   flutter_lints: ^2.0.0
   flutter_test:
