@@ -20,8 +20,10 @@ void main() {
       // arrange
       final Map<String, dynamic> jsonMap =
           json.decode(jsonFixture('strange_mind.json'));
+      
       // act
       final result = StrangeMindModel.fromJson(jsonMap);
+      
       // assert
       expect(result, tStrangeMindModel);
     },
@@ -32,6 +34,7 @@ void main() {
     () async {
       // act
       final result = tStrangeMindModel.toJson();
+      
       // assert
       final expectedJsonMap = {
         'orderId': 0,

@@ -158,14 +158,15 @@ class __$$_StrangeMindEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_StrangeMindEntity implements _StrangeMindEntity {
+class _$_StrangeMindEntity extends _StrangeMindEntity {
   _$_StrangeMindEntity(
       {required this.orderId,
       required this.title,
       required this.description,
       required this.detailsUrl,
       required this.imageUrl,
-      required this.modificationDate});
+      required this.modificationDate})
+      : super._();
 
   @override
   final int orderId;
@@ -214,7 +215,7 @@ class _$_StrangeMindEntity implements _StrangeMindEntity {
           this, _$identity);
 }
 
-abstract class _StrangeMindEntity implements StrangeMindEntity {
+abstract class _StrangeMindEntity extends StrangeMindEntity {
   factory _StrangeMindEntity(
       {required final int orderId,
       required final String title,
@@ -222,6 +223,7 @@ abstract class _StrangeMindEntity implements StrangeMindEntity {
       required final String detailsUrl,
       required final String imageUrl,
       required final DateTime modificationDate}) = _$_StrangeMindEntity;
+  _StrangeMindEntity._() : super._();
 
   @override
   int get orderId;

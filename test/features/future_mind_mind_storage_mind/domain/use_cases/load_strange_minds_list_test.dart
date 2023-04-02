@@ -30,7 +30,7 @@ void main() {
   ];
 
   test(
-    'should get List<StrangeMinds> from StrangeMindRepository',
+    'should get List<StrangeMindEntity> from StrangeMindRepository',
     () async {
       //arrange
       when(mockStrangeMindRepository.getStrangeMindsList())
@@ -38,9 +38,9 @@ void main() {
       //act
       final result = await useCase(NoParams());
       //assert
-      expect(result, Right(tStrangeMindsList));
       verify(mockStrangeMindRepository.getStrangeMindsList());
       verifyNoMoreInteractions(mockStrangeMindRepository);
+      expect(result, Right(tStrangeMindsList));
     },
   );
 }

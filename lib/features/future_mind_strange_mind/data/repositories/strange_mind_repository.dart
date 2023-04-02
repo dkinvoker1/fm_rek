@@ -1,10 +1,11 @@
-import 'package:fm_rek/features/future_mind_strange_mind/data/data_sources/remote/strange_mind_remote_data_source_abstract.dart';
-import 'package:fm_rek/features/future_mind_strange_mind/domain/entities/strange_mind_entity.dart';
+import '../data_sources/remote/strange_mind_remote_data_source_abstract.dart';
+import '../../domain/entities/strange_mind_entity.dart';
 
-import 'package:fm_rek/core/errors/failures.dart';
+import '../../../../core/errors/failures.dart';
 
 import 'package:dartz/dartz.dart';
 
+import '../../../../core/errors/exceptions.dart';
 import '../../domain/abstract_repositories/strange_mind_repository_abstract.dart';
 
 class StrangeMindRepository implements StrangeMindRepositoryAbstract {
@@ -14,8 +15,21 @@ class StrangeMindRepository implements StrangeMindRepositoryAbstract {
 
   @override
   Future<Either<FailureAbstract, List<StrangeMindEntity>>>
-      getStrangeMindsList() {
-    // TODO: implement getStrangeMindsList
-    throw UnimplementedError();
+      getStrangeMindsList() async {
+    try {
+      var strangeMindModelList = await remoteDataSource.getStrangeMindsList();
+
+      var strangeMindEntityList = strangeMindModelList
+          .map(
+            (e) => StrangeMindEntity.fromModel(e),
+          )
+          .toList();
+
+      return Right(strangeMindEntityList);
+    } on ConnectionException {
+      return const Left(FailureAbstract.connectionFailure());
+    } on ServerException {
+      return const Left(FailureAbstract.serverFailure());
+    }
   }
 }
