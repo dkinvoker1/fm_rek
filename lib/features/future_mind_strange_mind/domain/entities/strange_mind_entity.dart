@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'strange_mind.freezed.dart';
+part 'strange_mind_entity.freezed.dart';
 
 @freezed
 class StrangeMindEntity with _$StrangeMindEntity {

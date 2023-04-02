@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/domain/use_case_abstract.dart';
-import '../../../../core/errors/failure_abstract.dart';
+import '../../../../core/errors/failures.dart';
 import '../abstract_repositories/strange_mind_repository_abstract.dart';
-import '../entities/strange_mind.dart';
+import '../entities/strange_mind_entity.dart';
 
 class LoadStrangeMindsList
     implements UseCaseAbstract<List<StrangeMindEntity>, NoParams> {

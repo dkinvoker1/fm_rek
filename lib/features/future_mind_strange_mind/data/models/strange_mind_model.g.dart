@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'strange_mind.dart';
+part of 'strange_mind_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

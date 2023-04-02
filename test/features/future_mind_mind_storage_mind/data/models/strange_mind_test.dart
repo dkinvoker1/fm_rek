@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:fm_rek/features/future_mind_strange_mind/data/models/strange_mind.dart';
+import 'package:fm_rek/features/future_mind_strange_mind/data/models/strange_mind_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../fixtures/jsons/json_reader.dart';

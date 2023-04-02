@@ -6,10 +6,10 @@
 import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:fm_rek/core/errors/failure_abstract.dart' as _i5;
+import 'package:fm_rek/core/errors/failures.dart' as _i5;
 import 'package:fm_rek/features/future_mind_strange_mind/domain/abstract_repositories/strange_mind_repository_abstract.dart'
     as _i3;
-import 'package:fm_rek/features/future_mind_strange_mind/domain/entities/strange_mind.dart'
+import 'package:fm_rek/features/future_mind_strange_mind/domain/entities/strange_mind_entity.dart'
     as _i6;
 import 'package:mockito/mockito.dart' as _i1;
 

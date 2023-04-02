@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'strange_mind.freezed.dart';
-part 'strange_mind.g.dart';
+part 'strange_mind_model.freezed.dart';
+part 'strange_mind_model.g.dart';
 
 @freezed
 class StrangeMindModel with _$StrangeMindModel {
