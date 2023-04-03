@@ -23,25 +23,42 @@ void main() {
 
   final tStrangeMindModelList = [
     StrangeMindModel(
-        orderId: 1,
-        title: 'title',
-        description: 'description\thttps://usersearch.org/',
-        image_url: 'image_url',
-        modificationDate: DateTime(2000, 1, 1))
+      orderId: 1,
+      title: 'title 1',
+      description: 'description\thttps://usersearch.org/',
+      image_url: 'image_url',
+      modificationDate: DateTime(2000, 1, 1),
+    ),
+    StrangeMindModel(
+      orderId: 0,
+      title: 'title',
+      description: 'description\thttps://usersearch.org/',
+      image_url: 'image_url',
+      modificationDate: DateTime(2000, 1, 1),
+    )
   ];
 
   final tStrangeMindEntityList = [
     StrangeMindEntity(
-        orderId: 1,
-        title: 'title',
-        description: 'description',
-        detailsUrl: 'https://usersearch.org/',
-        imageUrl: 'image_url',
-        modificationDate: DateTime(2000, 1, 1))
+      orderId: 0,
+      title: 'title',
+      description: 'description',
+      detailsUrl: 'https://usersearch.org/',
+      imageUrl: 'image_url',
+      modificationDate: DateTime(2000, 1, 1),
+    ),
+    StrangeMindEntity(
+      orderId: 1,
+      title: 'title 1',
+      description: 'description',
+      detailsUrl: 'https://usersearch.org/',
+      imageUrl: 'image_url',
+      modificationDate: DateTime(2000, 1, 1),
+    )
   ];
 
   test(
-    'should return List<StrangeMindEntity> from remoteDataSource',
+    'should return sorted List<StrangeMindEntity> from remoteDataSource',
     () async {
       //arrange
       when(mockRemoteDataSource.getStrangeMindsList())

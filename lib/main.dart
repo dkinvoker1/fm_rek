@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'core/navigation/router.gr.dart';
+import 'dependency_injection.dart' as di;
 
 void main() {
-  runApp(const MainApp());
+  di.init();
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  MainApp({super.key});
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
     );
   }
 }

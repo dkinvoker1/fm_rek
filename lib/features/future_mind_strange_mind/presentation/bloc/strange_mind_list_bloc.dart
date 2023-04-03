@@ -10,6 +10,8 @@ part 'strange_mind_list_state.dart';
 part 'strange_mind_list_bloc.freezed.dart';
 
 const String serverFailureString = 'Server Failure';
+const String connectionFailureString = 'Connection Failure';
+const String unknownFailureString = 'Unknown Failure';
 
 class StrangeMindListBloc
     extends Bloc<StrangeMindListEvent, StrangeMindListState> {
@@ -26,7 +28,17 @@ class StrangeMindListBloc
     var strangeMindEither = await loadStrangeMind(NoParams());
 
     strangeMindEither.fold(
-      (failure) => emit(const StrangeMindListState.error(serverFailureString)),
+      (failure) => failure.maybeWhen(
+        serverFailure: (_) => emit(
+          const StrangeMindListState.error(serverFailureString),
+        ),
+        connectionFailure: (_) => emit(
+          const StrangeMindListState.error(connectionFailureString),
+        ),
+        orElse: () => emit(
+          const StrangeMindListState.error(unknownFailureString),
+        ),
+      ),
       (strangeMindList) => strangeMindList.isEmpty
           ? emit(const StrangeMindListState.loadedEmpty())
           : emit(StrangeMindListState.loaded(strangeMindList)),

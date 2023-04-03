@@ -64,12 +64,6 @@ void main() {
     },
   );
 
-  final expected = [
-    const StrangeMindListState.initial(),
-    const StrangeMindListState.loading(),
-    StrangeMindListState.loaded(tStrangeMindsList),
-  ];
-
   blocTest<StrangeMindListBloc, StrangeMindListState>(
     'emits [Loading, Loaded] when succesfull',
     build: () => strangeMindListBloc,

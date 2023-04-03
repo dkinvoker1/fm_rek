@@ -25,6 +25,8 @@ class StrangeMindRepository implements StrangeMindRepositoryAbstract {
           )
           .toList();
 
+      strangeMindEntityList.sort((a, b) => a.orderId.compareTo(b.orderId));
+
       return Right(strangeMindEntityList);
     } on ConnectionException {
       return const Left(FailureAbstract.connectionFailure());
