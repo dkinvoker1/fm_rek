@@ -3,9 +3,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../errors/failures.dart';
 
-part 'use_case_abstract.freezed.dart';
+part 'use_case.freezed.dart';
 
-abstract class UseCaseAbstract<Type, Params> {
+abstract class UseCase<Type, Params> {
   Future<Either<FailureAbstract, Type>> call(Params params);
 }
 

@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:fm_rek/features/future_mind_strange_mind/data/data_sources/remote/strange_mind_remote_data_source_abstract.dart'
+import 'package:fm_rek/features/future_mind_strange_mind/data/data_sources/remote/strange_mind_remote_data_source.dart'
     as _i2;
 import 'package:fm_rek/features/future_mind_strange_mind/data/models/strange_mind_model.dart'
     as _i4;
@@ -22,12 +22,12 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [StrangeMindRemoteDataSourceAbstract].
+/// A class which mocks [StrangeMindRemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockStrangeMindRemoteDataSourceAbstract extends _i1.Mock
-    implements _i2.StrangeMindRemoteDataSourceAbstract {
-  MockStrangeMindRemoteDataSourceAbstract() {
+class MockStrangeMindRemoteDataSource extends _i1.Mock
+    implements _i2.StrangeMindRemoteDataSource {
+  MockStrangeMindRemoteDataSource() {
     _i1.throwOnMissingStub(this);
   }
 

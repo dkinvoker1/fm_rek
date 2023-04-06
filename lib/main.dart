@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'core/navigation/router.gr.dart';
-import 'dependency_injection.dart' as di;
+import 'service_locator.dart' as sl;
 
 void main() {
-  di.init();
+  sl.init();
   runApp(MainApp());
 }
 

@@ -20,11 +20,14 @@ void main() {
     modificationDate: DateTime(2000, 1, 1),
   );
 
-  test('fromModel', () {
-    // act
-    final result = StrangeMindEntity.fromModel(tStrangeMindModel);
+  test(
+    'fromModel',
+    () {
+      // act
+      final result = StrangeMindEntity.fromModel(tStrangeMindModel);
 
-    //assert
-    expect(result, equals(tStrangeMindEntity));
-  });
+      //assert
+      expect(result, equals(tStrangeMindEntity));
+    },
+  );
 }

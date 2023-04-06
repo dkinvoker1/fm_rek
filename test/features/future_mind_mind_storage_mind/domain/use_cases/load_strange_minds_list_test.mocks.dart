@@ -7,10 +7,10 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:fm_rek/core/errors/failures.dart' as _i5;
-import 'package:fm_rek/features/future_mind_strange_mind/domain/abstract_repositories/strange_mind_repository_abstract.dart'
-    as _i3;
 import 'package:fm_rek/features/future_mind_strange_mind/domain/entities/strange_mind_entity.dart'
     as _i6;
+import 'package:fm_rek/features/future_mind_strange_mind/domain/repositories/strange_mind_repository.dart'
+    as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -34,12 +34,12 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
-/// A class which mocks [StrangeMindRepositoryAbstract].
+/// A class which mocks [StrangeMindRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockStrangeMindRepositoryAbstract extends _i1.Mock
-    implements _i3.StrangeMindRepositoryAbstract {
-  MockStrangeMindRepositoryAbstract() {
+class MockStrangeMindRepository extends _i1.Mock
+    implements _i3.StrangeMindRepository {
+  MockStrangeMindRepository() {
     _i1.throwOnMissingStub(this);
   }
 

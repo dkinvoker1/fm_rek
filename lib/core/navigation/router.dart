@@ -3,8 +3,8 @@
 // @CustomAutoRouter
 import 'package:auto_route/annotations.dart';
 
-import '../../features/future_mind_strange_mind/presentation/pages/strange_mind_detail_page.dart';
-import '../../features/future_mind_strange_mind/presentation/pages/strange_mind_list_page.dart';
+import '../../features/future_mind_strange_mind/presentation/pages/strange_mind_detail_page/strange_mind_detail_page.dart';
+import '../../features/future_mind_strange_mind/presentation/pages/strange_mind_list_page/strange_mind_list_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fm_rek/features/future_mind_strange_mind/presentation/bloc/strange_mind_list_bloc.dart';
+
+import '../bloc/strange_mind_list_bloc.dart';
 
 class LoadedEmptyWidget extends StatelessWidget {
   const LoadedEmptyWidget({

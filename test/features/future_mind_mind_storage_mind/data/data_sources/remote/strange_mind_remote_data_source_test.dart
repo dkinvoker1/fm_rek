@@ -1,9 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fm_rek/core/errors/exceptions.dart';
-import 'package:fm_rek/features/future_mind_strange_mind/data/data_sources/remote/strange_mind_remote_data_source.dart';
+import 'package:fm_rek/features/future_mind_strange_mind/data/data_sources/remote/default_strange_mind_remote_data_source.dart';
 import 'package:fm_rek/features/future_mind_strange_mind/data/models/strange_mind_model.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -14,11 +15,11 @@ import 'strange_mind_remote_data_source_test.mocks.dart';
 @GenerateMocks([Dio])
 void main() {
   late MockDio mockClient;
-  late StrangeMindRemoteDataSource dataSource;
+  late DefaultStrangeMindRemoteDataSource dataSource;
 
   setUp(() {
     mockClient = MockDio();
-    dataSource = StrangeMindRemoteDataSource(mockClient);
+    dataSource = DefaultStrangeMindRemoteDataSource(mockClient);
   });
 
   final tResponseData = [
@@ -44,6 +45,15 @@ void main() {
         requestOptions: RequestOptions(),
         data: tResponseData,
         statusCode: 200,
+      ),
+    );
+  }
+
+  void setUpResponseSocketException() {
+    when(mockClient.get(any)).thenThrow(
+      DioError(
+        requestOptions: RequestOptions(),
+        error: const SocketException('noConnection'),
       ),
     );
   }
@@ -91,6 +101,19 @@ void main() {
       final result = await dataSource.getStrangeMindsList();
       // assert
       expect(result, equals(tStrangeMindModelList));
+    },
+  );
+
+  test(
+    'should throw ConnectionException when the  dio error socketException',
+    () async {
+      // arrange
+      setUpResponseSocketException();
+
+      // act
+      final call = dataSource.getStrangeMindsList;
+      // assert
+      expect(() => call(), throwsA(const TypeMatcher<ConnectionException>()));
     },
   );
 

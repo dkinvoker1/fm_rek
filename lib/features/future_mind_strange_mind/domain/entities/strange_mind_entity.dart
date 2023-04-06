@@ -1,5 +1,6 @@
-import '../../data/models/strange_mind_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../data/models/strange_mind_model.dart';
 
 part 'strange_mind_entity.freezed.dart';
 

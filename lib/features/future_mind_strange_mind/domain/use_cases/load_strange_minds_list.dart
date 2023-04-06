@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/domain/use_case_abstract.dart';
+import '../../../../core/domain/use_case.dart';
 import '../../../../core/errors/failures.dart';
-import '../abstract_repositories/strange_mind_repository_abstract.dart';
 import '../entities/strange_mind_entity.dart';
+import '../repositories/strange_mind_repository.dart';
 
 class LoadStrangeMindsList
-    implements UseCaseAbstract<List<StrangeMindEntity>, NoParams> {
-  final StrangeMindRepositoryAbstract repository;
+    implements UseCase<List<StrangeMindEntity>, NoParams> {
+  final StrangeMindRepository repository;
 
   LoadStrangeMindsList(this.repository);
 

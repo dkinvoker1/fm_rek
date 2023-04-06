@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../dependency_injection.dart';
-import '../bloc/strange_mind_list_bloc.dart';
-import '../widgets/widgets.dart';
+import '../../../../../service_locator.dart';
+import 'bloc/strange_mind_list_bloc.dart';
+import 'widgets/widgets.dart';
 
 class StrangeMindListPage extends StatelessWidget {
   const StrangeMindListPage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class StrangeMindListPage extends StatelessWidget {
           title: const Center(child: Text('Strange Mind')),
         ),
         body: BlocProvider(
-          create: (context) => di<StrangeMindListBloc>(),
+          create: (context) => sl<StrangeMindListBloc>(),
           child: const StrangeMindListView(),
         ));
   }

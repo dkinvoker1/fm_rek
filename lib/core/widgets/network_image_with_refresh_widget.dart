@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NetworkImageWithRefresh extends StatefulWidget {
-  const NetworkImageWithRefresh({super.key, required this.url});
+class NetworkImageWithRefreshWidget extends StatefulWidget {
+  const NetworkImageWithRefreshWidget({super.key, required this.url});
 
   final String url;
 
   @override
-  State<NetworkImageWithRefresh> createState() =>
-      _NetworkImageWithRefreshState();
+  State<NetworkImageWithRefreshWidget> createState() =>
+      _NetworkImageWithRefreshWidgetState();
 }
 
-class _NetworkImageWithRefreshState extends State<NetworkImageWithRefresh> {
+class _NetworkImageWithRefreshWidgetState extends State<NetworkImageWithRefreshWidget> {
   late Widget _pic;
 
   @override

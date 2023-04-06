@@ -6,12 +6,11 @@
 import 'dart:async' as _i5;
 
 import 'package:dartz/dartz.dart' as _i3;
-import 'package:fm_rek/core/domain/use_case_abstract.dart' as _i8;
 import 'package:fm_rek/core/errors/failures.dart' as _i6;
-import 'package:fm_rek/features/future_mind_strange_mind/domain/abstract_repositories/strange_mind_repository_abstract.dart'
-    as _i2;
 import 'package:fm_rek/features/future_mind_strange_mind/domain/entities/strange_mind_entity.dart'
     as _i7;
+import 'package:fm_rek/features/future_mind_strange_mind/domain/repositories/strange_mind_repository.dart'
+    as _i2;
 import 'package:fm_rek/features/future_mind_strange_mind/domain/use_cases/load_strange_minds_list.dart'
     as _i4;
 import 'package:mockito/mockito.dart' as _i1;
@@ -27,9 +26,9 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeStrangeMindRepositoryAbstract_0 extends _i1.SmartFake
-    implements _i2.StrangeMindRepositoryAbstract {
-  _FakeStrangeMindRepositoryAbstract_0(
+class _FakeStrangeMindRepository_0 extends _i1.SmartFake
+    implements _i2.StrangeMindRepository {
+  _FakeStrangeMindRepository_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -58,16 +57,16 @@ class MockLoadStrangeMindsList extends _i1.Mock
   }
 
   @override
-  _i2.StrangeMindRepositoryAbstract get repository => (super.noSuchMethod(
+  _i2.StrangeMindRepository get repository => (super.noSuchMethod(
         Invocation.getter(#repository),
-        returnValue: _FakeStrangeMindRepositoryAbstract_0(
+        returnValue: _FakeStrangeMindRepository_0(
           this,
           Invocation.getter(#repository),
         ),
-      ) as _i2.StrangeMindRepositoryAbstract);
+      ) as _i2.StrangeMindRepository);
   @override
   _i5.Future<_i3.Either<_i6.FailureAbstract, List<_i7.StrangeMindEntity>>> call(
-          _i8.NoParams? noParams) =>
+          dynamic noParams) =>
       (super.noSuchMethod(
         Invocation.method(
           #call,
