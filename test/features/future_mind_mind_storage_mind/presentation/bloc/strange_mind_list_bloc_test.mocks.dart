@@ -6,6 +6,7 @@
 import 'dart:async' as _i5;
 
 import 'package:dartz/dartz.dart' as _i3;
+import 'package:fm_rek/core/domain/use_case.dart' as _i8;
 import 'package:fm_rek/core/errors/failures.dart' as _i6;
 import 'package:fm_rek/features/future_mind_strange_mind/domain/entities/strange_mind_entity.dart'
     as _i7;
@@ -66,7 +67,7 @@ class MockLoadStrangeMindsList extends _i1.Mock
       ) as _i2.StrangeMindRepository);
   @override
   _i5.Future<_i3.Either<_i6.FailureAbstract, List<_i7.StrangeMindEntity>>> call(
-          dynamic noParams) =>
+          _i8.NoParams? noParams) =>
       (super.noSuchMethod(
         Invocation.method(
           #call,

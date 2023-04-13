@@ -22,7 +22,8 @@ StrangeMindModel _$StrangeMindModelFromJson(Map<String, dynamic> json) {
 mixin _$StrangeMindModel {
   int get orderId => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String get description =>
+      throw _privateConstructorUsedError; // ignore: non_constant_identifier_names
   String get image_url => throw _privateConstructorUsedError;
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
@@ -167,6 +168,7 @@ class _$_StrangeMindModel implements _StrangeMindModel {
   final String title;
   @override
   final String description;
+// ignore: non_constant_identifier_names
   @override
   final String image_url;
   @override
@@ -228,7 +230,7 @@ abstract class _StrangeMindModel implements StrangeMindModel {
   String get title;
   @override
   String get description;
-  @override
+  @override // ignore: non_constant_identifier_names
   String get image_url;
   @override
   DateTime get modificationDate;

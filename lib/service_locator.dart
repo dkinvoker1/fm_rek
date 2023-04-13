@@ -1,4 +1,5 @@
-import 'package:dio/dio.dart';
+import 'core/data/dio_client.dart';
+import 'core/data/future_mind_client/future_mind_client.dart';
 import 'package:get_it/get_it.dart';
 
 import 'features/future_mind_strange_mind/data/data_sources/remote/default_strange_mind_remote_data_source.dart';
@@ -16,13 +17,11 @@ void init() {
   _futureMindStrangeMindFeatureInit();
 
   //core
-
-  //external
+  //Rest
+  final dio = buildDioClient();
   sl.registerLazySingleton(
-    () => Dio(
-      BaseOptions(
-        connectTimeout: const Duration(seconds: 10),
-      ),
+    () => FutureMindClient(
+      dio,
     ),
   );
 }

@@ -9,6 +9,7 @@ class StrangeMindModel with _$StrangeMindModel {
     required int orderId,
     required String title,
     required String description,
+    // ignore: non_constant_identifier_names
     required String image_url,
     required DateTime modificationDate,
   }) = _StrangeMindModel;
